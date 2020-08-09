@@ -1,0 +1,5 @@
+name: VanillaRL
+version: ${project.version}
+main: de.f4ls3.vanillarl.VanillaRL
+api-version: 1.16
+authors: [f4ls3]
