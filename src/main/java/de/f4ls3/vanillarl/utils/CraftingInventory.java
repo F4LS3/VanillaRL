@@ -17,6 +17,7 @@ public class CraftingInventory implements Inventory
 
     private Inventory inventory;
     private List<Integer> craftingSlots;
+    private HashMap<Integer, ItemStack> craftingGrid;
     private int resultSlot;
 
     public CraftingInventory(Inventory inventory, List<Integer> craftingSlots, int resultSlot)
@@ -24,6 +25,9 @@ public class CraftingInventory implements Inventory
         this.inventory = inventory;
         this.craftingSlots = craftingSlots;
         this.resultSlot = resultSlot;
+
+        this.craftingGrid = new HashMap<>();
+        this.craftingSlots.forEach(slot -> this.craftingGrid.put(slot, null));
     }
 
     public Inventory getInventory()
@@ -34,6 +38,10 @@ public class CraftingInventory implements Inventory
     public List<Integer> getCraftingSlots()
     {
         return craftingSlots;
+    }
+
+    public HashMap<Integer, ItemStack> getCraftingGrid() {
+        return craftingGrid;
     }
 
     public int getResultSlot() {

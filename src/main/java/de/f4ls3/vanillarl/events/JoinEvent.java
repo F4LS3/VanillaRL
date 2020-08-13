@@ -26,6 +26,9 @@ public class JoinEvent implements Listener
         ItemStack item = new ItemBuilder(Material.TURTLE_HELMET, 1, "§bOxygen Helmet", "§7Water Filtering").build();
         item.addUnsafeEnchantment(EnchantmentManager.WATER_FILTERING, 1);
 
-        player.getInventory().addItem(item);
+        if(!player.getInventory().contains(Material.TURTLE_HELMET))
+        {
+            player.getInventory().addItem(item);
+        }
     }
 }
